@@ -188,6 +188,7 @@ export const MainPage = () => {
                 </div>
             </div>
             {/*END SIDE VAR & CONTENT */}
+            <div className='clear'></div>
             {/* FOOTER */}
             <footer>
                 <p>

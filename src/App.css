@@ -250,12 +250,16 @@ aside .asideBox {
 /* FOOTER */
 footer {
   font-size: 20px;
+  background-color: #333333;
+  min-height: 100px;
+  width: 100%;
+  margin-top: 10px;
+  line-height: 100px;
 }
 
 footer a span{
-  color: #333333;
+  color: #d7cfcf;
 }
-
 footer a {
   text-decoration: none;
   color:#00c2cb;
@@ -268,6 +272,6 @@ footer a:hover{
 
 footer a:visited {
   /* not working */
-  color: #F5A22F; 
+  color: #F5A22F;
 }
 /* end FOOTER */
