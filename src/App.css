@@ -1,38 +1,273 @@
-.App {
+/* BODY AND CONTAINER */
+* {
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+}
+
+body {
+  background: rgba(255, 255, 255, 1) url('../public/images/webb.png') repeat fixed center;
+}
+
+.mainContainer {
+  width: 1905px;
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* end BODY AND CONTAINER */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* HEADER */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.header {
+  display: block;
+  text-align: center;
   align-items: center;
+  margin: 0 auto;
+  max-height: 500px;
+  padding: 20px;
+  width: 1865px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(203, 75, 0, .7));
+  clip-path: polygon(0 80%, 50% 0, 100% 80%, 100% 100%, 0 100%);
+  box-shadow: 1px 5px 15px #F5A22F;
+}
+
+.mainContainer .header .logo {
+  border-radius: 55px;
+  max-width: 100px;
+  box-shadow: 2px 2px 5px #F5A22F;
+}
+
+.webTitle,
+.webSubTitle {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.mainContainer .header .webTitle {
+  color: #00c2cb;
+  font-weight: bold;
+  font-size: 60px;
+  text-shadow: 2px 2px 10px #F5A22F;
+}
+
+.mainContainer .header .webSubTitle {
+  color: #00c2cb;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 1px 3px 5px #F5A22F;
+}
+
+/* End HEADER */
+
+/* NAVBAR */
+
+.nav {
+  display: flex;
+  height: 40px;
+  background-color: #333333 !important;
+}
+
+.nav>ul {
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto !important;
+  width: 1300px;
+}
+
+.nav>ul>li {
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  min-width: 60px;
+  max-width: 160px;
+  border-right: 1px solid black;
+  transition: all 300ms;
+}
+
+.nav ul li:hover {
+  background-color: #F5A22F;
+  box-shadow: 0px 0px 4px #DE1FA1 inset;
+  cursor: pointer;
+  color: #DE1FA1;
+}
+
+.nav ul li a {
+  color: #00c2cb;
+  display: block;
+  text-decoration: none;
+  padding: 0px 30px 0px 30px;
+}
+
+
+.nav ul li:first-child {
+  border-left: 1px solid black;
+}
+
+.nav ul li a:hover,
+.nav ul li ul li a:hover {
+  color: #DE1FA1;
+}
+
+.nav>ul>li>ul {
+  display: none;
+  position: absolute;
+  text-align: left;
+  width: 160px;
+  box-shadow: 0px 2px #333333;
+}
+
+/* End NAVBAR */
+
+/* DROPDOWN Menu */
+.nav>ul>li:hover>ul {
+  display: block;
+  z-index: 1;
+}
+
+.nav>ul>li>ul>li {
+  border: 1px dashed black;
+}
+
+.nav>ul>li>ul {
+  list-style: none;
+  color: #00c2cb;
+  background-color: #F5A22F;
+}
+
+/* end DROPDOWN Menu */
+
+/* CONTENT */
+.content {
+  padding-top: 30px;
+  width: 1900px;
+  min-height: 500px;
+  margin: 0 auto;
+}
+
+/* end CONTENT */
+
+/* SIDE VAR */
+aside {
+  float: left;
+  width: 10%;
+  box-shadow: 0px 0px 2px wheat inset;
+  background-color: #333333;
+  border-radius: 7px;
+  margin-left: 15%;
+  box-shadow: 1px 2px #DE1FA1;
+}
+
+aside>a {
+  margin-top: 50px;
+}
+
+aside a {
+  display: block;
+  color: #00c2cb;
+}
+
+aside h1 {
+  color: #00c2cb;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #F5A22F;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+aside .asideBox>div {
+  color: #00c2cb;
+}
+
+aside .asideBox input[type="button"] {
+  margin-top: 10px;
+  cursor: pointer;
+  color: #00c2cb;
+  padding: 0px 4px;
+  border-radius: 5px;
+  background-color: #d7cfcf;
+  transition: all 300ms;
+}
+
+aside .asideBox input[type="button"]:hover {
+  background-color: #F5A22F;
+  color: #DE1FA1;
+}
+
+aside .asideBox {
+  margin: 40px 0px;
+  z-index: 2;
+  padding: 8px;
+  border-bottom: 1px solid #d7cfcf;
+
+}
+
+/* end SIDE VAR */
+
+.clear {
+  clear: both;
+  float: none;
+}
+
+/* CONTENT */
+
+.sectionContainer .sectionPart {
+  width: 70%;
+  display: block;
+  background-color: rgba(202, 202, 202, 0.7);
+  margin-bottom: 30px;
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.sectionContainer {
+  float: left;
+  width: 75%;
+}
+
+.sectionContainer .sectionPart h2 p,
+.sectionContainer .sectionPart h2 {
+  display: block;
+  float: left;
+}
+
+.sectionContainer .sectionPart h2 {
+  padding-right: 10px;
+}
+  .sectionContainer .sectionPart article h2 p {
+  font-weight: 500;
+  margin-right: 50px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: red;
 }
 
-.App-link {
-  color: #61dafb;
+/* end CONTENT */
+
+/* FOOTER */
+footer {
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer a span{
+  color: #333333;
 }
+
+footer a {
+  text-decoration: none;
+  color:#00c2cb;
+  cursor: pointer;
+}
+
+footer a:hover{
+  color: #DE1FA1;
+}
+
+footer a:visited {
+  /* not working */
+  color: #F5A22F; 
+}
+/* end FOOTER */
