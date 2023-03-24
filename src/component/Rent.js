@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { MyCalendar } from './MyCalendar';
 import '../css/Content.css'
+import '../css/Carousel.css'
 
 export const Rent = () => {
 
