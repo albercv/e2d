@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { MyCalendar } from './MyCalendar';
 import '../css/Content.css'
 import '../css/Carousel.css'
@@ -49,7 +49,7 @@ export const Rent = () => {
           <button onClick={e => selectNewImage(-1)}>{"<"}</button>
           <div className='photos'>
             <div className='imageContainer'>
-              <img src={require(`./../assets/images/${selectedImage}`)} alt='Home Image' />
+              <img src={require(`./../assets/images/${selectedImage}`)} alt='Home' />
               <p className='imageCounter'>{`${selectedIndex + 1} de  ${images.length}`}</p>
             </div>
           </div>

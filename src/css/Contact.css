@@ -1,0 +1,86 @@
+.contact {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.contact .formField {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1px;
+}
+
+.formField {
+    background-color: #212121;
+    max-width: 190px;
+    height: 40px;
+    padding: 10px;
+    color: rgb(0, 194, 203);
+    /* text-align: center; */
+    border: 2px solid white;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.formField:focus {
+    color: #DE1FA1;
+    background-color: #212121;
+    outline-color: rgb(0, 194, 203);
+    box-shadow: -3px -3px 15px #F5A22F;
+    border: 2px solid #F5A22F;
+    transition: .1s;
+    transition-property: box-shadow;
+}
+
+.contact input[type=submit] {
+    margin-top: 30px;
+    line-height: 0.7;
+    --glow-color: #DE1FA1;
+    --glow-spread-color: #e921aa;
+    --enhanced-glow-color: #f724b4;
+    --btn-color: rgb(0, 194, 203);
+    border: .01em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em white;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.contact input[type=submit]::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.contact input[type=submit]:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+        text-shadow: 0 0 .5em var(--glow-color);
+}
+
+.contact input[type=submit]:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}

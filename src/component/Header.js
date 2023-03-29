@@ -58,7 +58,11 @@ export const Header = () => {
                     <li className='navLi'><a href='#' >Proyectos</a></li>
                     <li className='navLi'><a href='#' >Sobre mí</a></li>
                     <li className='navLi'><a href='#' >Reseñas</a></li>
-                    <li className='navLi'><a href='#' >Contacto</a></li>
+                    <li className='navLi'>
+                        <NavLink className={({ isActive }) => { return isActive ? 'active' : '' }} to="/contact">
+                            Contacto
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
             <div className='clear'></div>

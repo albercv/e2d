@@ -4,6 +4,7 @@ import { NotFound } from '../component/NotFound'
 import { Content } from '../component/Content'
 import { Header } from '../component/Header'
 import { Rent } from '../component/Rent'
+import { Contact } from '../component/Contact'
 
 export const MainPage = () => {
     return (
@@ -65,6 +66,7 @@ export const MainPage = () => {
                 <Routes>
                     <Route path='/' element={<Content/>} />
                     <Route path='/home' element={<Content/>} />
+                    <Route path='/contact' element={<Contact/>} />
                     <Route path='/rent' element={<Rent/>} />
                     <Route path='/*' element={<NotFound />} />
                 </Routes>

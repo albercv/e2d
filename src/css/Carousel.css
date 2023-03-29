@@ -1,6 +1,6 @@
 /* CAROUSEL */
 
-.content .sectionPart article {
+.content .sectionPart .carousel {
     display: flex;
 }
 
@@ -58,7 +58,8 @@
   .sectionPart .calendar {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   
   /* end CAROUSEL */
