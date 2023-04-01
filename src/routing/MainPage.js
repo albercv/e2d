@@ -6,7 +6,7 @@ import { Header } from '../component/Header'
 import { Rent } from '../component/Rent'
 import { Contact } from '../component/Contact'
 
-export const MainPage = () => {
+export const MainPage = (user) => {
     return (
         <BrowserRouter>
         <div className='mainContainer'>

@@ -1,10 +1,40 @@
 import React from 'react'
+import jwt_decode from 'jwt-decode';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import '../css/Header.css'
 import '../css/Navbar.css'
 
 
 export const Header = () => {
+
+    const [user, setUser] = useState({})
+
+    //Tutorial made this a function instead const
+    const handleCallbackResponse = (response) => {
+      console.log(`Encoded JWT token ${response.credential}`)
+      let userObject = jwt_decode(response.credential)
+      console.log(userObject)
+      setUser(userObject)
+      document.getElementById("signInDiv").hidden = true;
+    }
+  
+    useEffect(() => {
+      /* global google */
+      google.accounts.id.initialize({
+        client_id: "396387926684-5nj9r1eiop3meos8nhot9fphruq4grp0.apps.googleusercontent.com",
+        callback: handleCallbackResponse
+      });
+  
+      google.accounts.id.renderButton(
+        document.getElementById("signInDiv"),
+        {
+          theme: "outline",
+          size: "small"
+        }
+      )
+    }, [])
+
     return (
         <>
             {/* HEADER */}
@@ -63,7 +93,10 @@ export const Header = () => {
                             Contacto
                         </NavLink>
                     </li>
+                    { user && <li className='navLi'><img src={user.image}/>{user.name}</li>  }
+                    <li id="signInDiv"></li>
                 </ul>
+                <img src={user.image}/>
             </nav>
             <div className='clear'></div>
             {/* END HEADER */}

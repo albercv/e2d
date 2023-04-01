@@ -13,14 +13,28 @@
   }
   
   .mainContainer .header .logo {
-    border-radius: 90px;
-    max-width: 10%;
+    margin-top: 20px;
+    border-radius: 100%;
+    max-width: 7%;
     box-shadow: 2px 2px 5px #F5A22F;
+    animation: rotation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function:  steps(10, end);
+    transition: all 300ms;
+  }
+
+  .mainContainer .header .logo:hover {
+    scale :1.2;
+    border-radius: 5px solid #00c2cb;
   }
 
   .webTitle,
   .webSubTitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    opacity: 0;
+  will-change: auto;
   }
   
   .mainContainer .header .webTitle {
@@ -38,3 +52,21 @@
   }
   
   /* End HEADER */
+
+  /* Animation ROTATION */
+    @keyframes rotation{
+      from{
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  /* End Animation ROTATION */
+
+  /* Google Button */
+  #signInDiv {
+    margin: 0 auto;
+    text-align: center;
+  }
+  /* end Google Button */
