@@ -18,11 +18,11 @@ export const MainPage = (user) => {
                         <h1>Entra en la web</h1>
                         <div>
                             <span>Usuario:</span>
-                            <input type="text" value="" />
+                            <input type="text" value=""  placeholder='input'/>
                         </div>
                         <div>
                             <span>Contraseña:</span>
-                            <input type="text" value="" />
+                            <input type="text" value="" placeholder='input'/>
                         </div>
                         <input type="button" value="Entra en la web" />
                         <a href='#'>evolve2digital.com</a>
