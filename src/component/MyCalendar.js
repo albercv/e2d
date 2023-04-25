@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { parseISO, isWithinInterval } from 'date-fns';
+import { isWithinInterval } from 'date-fns';
 
 export const MyCalendar = () => {
 
   const [value, setValue] = useState(null);
+  const [datesString, setDatesString] = useState(null);
   const [disabledRanges, setDisabledRanges] = useState([]);
 
   useEffect(() => {
-    const datesString = localStorage.getItem('dates');
+    setDatesString(localStorage.getItem('dates'));
+  }, []);
+
+    useEffect(() => {
+    //TODO get values from server
+    
     if (datesString) {
       const parsedDates = JSON.parse(datesString);
       setDisabledRanges((prevItems) => [...prevItems, parsedDates]);
     } else {
       console.log("Not dates available");
     }
-  }, [value]);
+  }, [value, datesString]);
 
   const resetCalendar = () => {
     setValue(null);
@@ -24,17 +30,16 @@ export const MyCalendar = () => {
   }
 
   const handleDateChange = (dateRange) => {
-    console.log(dateRange);
     let dateObjects = {
       start: dateRange[0].toISOString(),
       end: dateRange[1].toISOString()
     };
-  
-    let datesString = JSON.stringify(dateObjects); // convertir a cadena
-    localStorage.setItem('dates', datesString);
+
+    const dateRangeJSON = JSON.stringify(dateObjects);
+    setDatesString(dateRangeJSON);
+    localStorage.setItem('dates', dateRangeJSON);
   
     setValue(dateRange);
-    setDisabledRanges((prevItems) => [...prevItems, dateObjects]);
   };
 
   const isDateDisabled = ({ date }) => {
@@ -42,6 +47,7 @@ export const MyCalendar = () => {
       isWithinInterval(date, { start: new Date(range.start), end: new Date(range.end) })
     );
   };
+
   return (
     <div className='calendar'>
       <Calendar onChange={handleDateChange}
@@ -52,7 +58,6 @@ export const MyCalendar = () => {
         maxDetail={'year'}
         returnValue="range"
         tileDisabled={isDateDisabled} //Not working yet
-      // defaultValue={[new Date().getDate + 1, new Date().getDate + 2]}
       />
       <button onClick={resetCalendar} >Reset Calendar</button>
       <p>Reserva tus fechas</p>

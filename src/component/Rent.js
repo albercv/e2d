@@ -5,6 +5,7 @@ import '../css/Carousel.css'
 
 export const Rent = () => {
 
+  //TODO download images urls from server
   const images = [
     "piso1.jpeg",
     "piso2.jpeg",
@@ -24,16 +25,12 @@ export const Rent = () => {
     console.log(`Next ${next}`)
     switch (selectedIndex) {
       case 0:
-        console.log(`${selectedIndex} Next < 0: ${next < 0} & result = ${next < 0 ? (images.length + next) : selectedIndex + next}`);
         nextIndex = next < 0 ? (images.length + next) : selectedIndex + next;
         break;
       case images.length - 1:
-        console.log(`Length: ${images.length}`)
-        console.log(`${selectedIndex} Next > 0: ${next > 0} & result = ${next > 0 ? 0 : images.length + next}`)
         nextIndex = next > 0 ? 0 : selectedIndex + next;
         break;
       default:
-        console.log(`${selectedIndex} result = ${selectedIndex + next}`);
         nextIndex = selectedIndex + next;
         break;
     }
