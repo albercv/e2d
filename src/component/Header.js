@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom'
 import { googleData } from '../assets/google_secret';
+import { useUser } from './UserContext';
 import '../css/Header.css'
 import '../css/Navbar.css'
 
@@ -10,7 +11,7 @@ import '../css/Navbar.css'
 export const Header = () => {
 
     /* global google */
-    const [user, setUser] = useState(null);
+    const { user, setUser } = useUser();
     const [isUserLogged, setIsUserLogged] = useState(false);
     const googleButton = useRef(null)
     const loginData = useRef(null)
