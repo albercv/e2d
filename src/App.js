@@ -1,4 +1,5 @@
 import './App.css';
+import { ChatWindow } from './component/ChatWindow';
 import { UserProvider } from './component/UserContext';
 import { MainPage } from './routing/MainPage';
 
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <UserProvider>
         <MainPage />
+        <ChatWindow />
       </UserProvider>
     </div>
   );
