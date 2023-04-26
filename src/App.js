@@ -1,4 +1,5 @@
 import './App.css';
+import { UserProvider } from './component/UserContext';
 import { MainPage } from './routing/MainPage';
 
 
@@ -10,7 +11,9 @@ function App() {
   clearConsoleErrors();
   return (
     <div className="App">
-      <MainPage />
+      <UserProvider>
+        <MainPage />
+      </UserProvider>
     </div>
   );
 }
