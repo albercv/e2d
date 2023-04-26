@@ -2,7 +2,7 @@ import React from 'react'
 import jwt_decode from 'jwt-decode';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom'
-import { googleData } from '../assets/google_secret';
+import { googleData } from '../assets/google_secrets';
 import '../css/Header.css'
 import '../css/Navbar.css'
 
@@ -18,6 +18,7 @@ export const Header = () => {
     //Tutorial made this a function instead const
     const handleCallbackResponse = (response) => {
         let userObject = jwt_decode(response.credential)
+        console.log(userObject);
         setUser(userObject);
         googleButton.current.className = 'hide';
     }
