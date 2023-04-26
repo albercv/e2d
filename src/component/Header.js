@@ -2,13 +2,15 @@ import React from 'react'
 import jwt_decode from 'jwt-decode';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom'
-import { googleData } from '../assets/google_secrets';
 import { useUser } from './UserContext';
 import '../css/Header.css'
 import '../css/Navbar.css'
 
 
 export const Header = () => {
+
+
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
     /* global google */
     const { user, setUser } = useUser();
@@ -46,7 +48,7 @@ export const Header = () => {
         //TODO store clientId in server
         loadScript('https://accounts.google.com/gsi/client', () => {
             google.accounts.id.initialize({
-                client_id: googleData.map(secret => {return secret.web.client_id}),
+                client_id: apiKey,
                 callback: handleCallbackResponse,
             });
 
