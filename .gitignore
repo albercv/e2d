@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#Google secrets
+e2d/src/assets/google_secrets.js
+src/assets/google_secrets.js
