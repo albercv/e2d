@@ -1,6 +1,6 @@
 .chat-window {
     position: fixed;
-    bottom: 50px;
+    bottom: 10px;
     right: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -16,8 +16,11 @@
   }
   
   .chat-window.expanded {
-    width: 600px;
-    height: 500px;
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 500px;
+    bottom: 40px;
   }
   
   .chat-window.minimized {
@@ -43,6 +46,10 @@
     background-color: #F5A22F;
     color: #DE1FA1;
     transition: all 150ms;
+  }
+
+  @media (max-width: 414px) {
+    
   }
   
   /* .window-content {

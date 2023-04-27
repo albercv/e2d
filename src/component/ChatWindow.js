@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/ChatWindow.css";
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css'
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
@@ -6,7 +6,7 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 export const ChatWindow = () => {
     const openAIApiKey = process.env.REACT_APP_CHATGPT_API_KEY;
     
-    const [isMinimized, setIsMinimized] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(true);
     const [messages, setMessages] = useState([{
         message: "Hola",
         sender: "E2D"
@@ -43,7 +43,7 @@ export const ChatWindow = () => {
 
         const systemMessage = {
             role: "system",
-            content: "Speak as software developer expert that explains everything to 8 years old kids"
+            content: "Speak as software developer expert that explains everything as if I was an 8 years old kid"
         }
 
         let apiRequestBody = {
