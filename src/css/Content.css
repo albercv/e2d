@@ -1,7 +1,7 @@
 /* CONTENT */
 
 .sectionContainer .sectionPart {
-    width: 70%;
+    width: 100%;
     display: block;
     background-color: rgba(202, 202, 202, 0.7);
     margin-bottom: 30px;
@@ -9,11 +9,6 @@
     padding: 20px;
     border-radius: 5px 15px 15px 5px;
     padding-right: 40px;
-  }
-  
-  .sectionContainer {
-    float: left;
-    width: 75%;
   }
   
   .sectionContainer .sectionPart h2 p,
@@ -34,7 +29,6 @@
   }
   
 .content {
-    padding-top: 30px;
     width: 100%;
     min-height: 500px;
     margin: 0 auto;

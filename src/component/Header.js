@@ -1,10 +1,11 @@
 import React from 'react'
 import jwt_decode from 'jwt-decode';
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom'
 import { useUser } from './UserContext';
 import '../css/Header.css'
 import '../css/Navbar.css'
+import { Tooltip } from './Tooltip';
 
 
 export const Header = () => {
@@ -59,7 +60,7 @@ export const Header = () => {
         });
     }, [])
 
-    useEffect(() =>{
+    useEffect(() => {
         setIsUserLogged(!isUserLogged);
     }, [user])
 
@@ -68,7 +69,7 @@ export const Header = () => {
             {/* HEADER */}
             <header className='header'>
                 <div>
-                    <img src="./images/logo.png" className='logo' />
+                    <img src="./images/logo.png" alt='logo' className='logo' />
                 </div>
                 <h1 className='webTitle'>Evolve 2 Digital</h1>
                 <h6 className='webSubTitle'>Evoluciona al digital</h6>
@@ -80,14 +81,20 @@ export const Header = () => {
                             Home
                         </NavLink>
                     </li>
-                    <li className='navLi'><a href='#' >Blog</a></li>
+                    <li className='navLi'>
+                        <Tooltip content="Comming Soon!">
+                            <a href="javascript:void(0)" >Blog</a>
+                        </Tooltip>
+                    </li>
                     <li className='navLi'>
                         <NavLink className={({ isActive }) => { return isActive ? 'active' : '' }} to="/rent">
                             Alquiler
                         </NavLink>
                     </li>
-                    <li className='navLi'>
-                        <a href='#' >Lenguajes</a>
+                    <li className='navLi tooltip-container'>
+                        <Tooltip content="Comming Soon!">
+                            <a href="javascript:void(0)" >Lenguajes</a>
+                        </Tooltip>
                         <ul>
                             <li>
                                 <a href="#">Java</a>
@@ -107,25 +114,36 @@ export const Header = () => {
                         </ul>
                     </li>
                     <li className='navLi'>
-                        <a href='#' >Frameworks</a>
+                        <Tooltip content="Comming Soon!">
+                            <a href="javascript:void(0)" >Frameworks</a>
+                        </Tooltip>
                         <ul>
                             <li>Spring boot</li>
                             <li>React js</li>
                         </ul>
                     </li>
-                    <li className='navLi'><a href='#' >Proyectos</a></li>
-                    <li className='navLi'><a href='#' >Sobre mí</a></li>
+
+                    <li className='navLi'>
+                        <Tooltip content="Comming Soon!">
+                            <a href="javascript:void(0)" >Proyectos</a>
+                        </Tooltip>
+                    </li>
+                    <li className='navLi'>
+                        <Tooltip content="Comming Soon!">
+                            <a href="javascript:void(0)" >Background</a>
+                        </Tooltip>
+                    </li>
                     <li className='navLi'>
                         <NavLink className={({ isActive }) => { return isActive ? 'active' : '' }} to="/contact">
                             Contacto
                         </NavLink>
                     </li>
-                    <li className='navLi'><a href='#' >Reseñas</a></li>
+                    <li className='navLi'><a href="javascript:void(0)" >Reseñas</a></li>
                     <li ref={googleButton} id="signInDiv" className="navLi"></li>
 
                     {!isUserLogged &&
                         <li ref={loginData} className="navLi login" onClick={handleSignOut}>
-                            {user && user.picture ? <img className="loginElem" src={user.picture} /> : null}
+                            {user && user.picture ? <img className="loginElem" alt='user picture' src={user.picture} /> : null}
                             {user && user.name ? <span className="loginElem">{user.name}</span> : null}
                         </li>
                     }
