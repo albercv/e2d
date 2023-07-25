@@ -1,10 +1,11 @@
 import React from 'react'
-import {Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
+import {Routes, Route, BrowserRouter } from "react-router-dom"
 import { NotFound } from '../component/NotFound'
 import { Content } from '../component/Content'
 import { Header } from '../component/Header'
 import { Rent } from '../component/Rent'
 import { Contact } from '../component/Contact'
+import { Iframe } from '../component/Iframe'
 
 export const MainPage = (user) => {
     return (
@@ -13,7 +14,7 @@ export const MainPage = (user) => {
             <Header />
             {/* SIDE VAR & CONTENT */}
             <div className='content'>
-                <aside>
+                {/* <aside>
                     <div className='asideBox'>
                         <h1>Entra en la web</h1>
                         <div>
@@ -61,10 +62,10 @@ export const MainPage = (user) => {
                         <a href='#'>evolve2digital.com</a>
                         <a href='#'>evolve2digital.com</a>
                     </div>
-                </aside>
+                </aside> */}
                 <div className='sectionContainer'>
                 <Routes>
-                    <Route path='/' element={<Content/>} />
+                    <Route path='/' className="center-iframe" element={<Iframe/>} />
                     <Route path='/home' element={<Content/>} />
                     <Route path='/contact' element={<Contact/>} />
                     <Route path='/rent' element={<Rent/>} />
