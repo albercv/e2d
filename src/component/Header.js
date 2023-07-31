@@ -138,7 +138,6 @@ export const Header = () => {
                             Contacto
                         </NavLink>
                     </li>
-                    <li className='navLi'><a href="javascript:void(0)" >Reseñas</a></li>
                     <li ref={googleButton} id="signInDiv" className="navLi"></li>
 
                     {!isUserLogged &&

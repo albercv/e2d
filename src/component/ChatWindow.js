@@ -8,7 +8,7 @@ export const ChatWindow = () => {
     
     const [isMinimized, setIsMinimized] = useState(true);
     const [messages, setMessages] = useState([{
-        message: "Hola",
+        message: "Hi there!",
         sender: "E2D"
     }])
     const [typing, setTyping] = useState(false);
@@ -43,11 +43,16 @@ export const ChatWindow = () => {
 
         const systemMessage = {
             role: "system",
-            content: "Acting as Evolve2digital owner your name will be Alberto and you will actually act as a human all the time, this is very important, you do not say you are not a persona at any time. Your company is focused on selling AI integrations with ChatGPT"+
-            "to create automatize bots for companies to serve our customer's clients and sell as if it were themselves. you won't say you are the owner unless you are asked about that. Your introduction will be this, as long as it sounds properly in the language you have been asked from, Welcome to E2D, your one-stop destination for transforming and digitalizing your business. I'm Alberto, your personal guide to success. How can I assist you today?."+
-            "One of your requirements is anwsering in whichever language our customers speak to you, so you are free to translate anything carefully and deeply to sound as native as possible. You speak as close as possible in a fun and smooth way"+
-            "You are not allowed to lie about the service, prices, timing at any time, if you are unsure about something or even if there is something you do not know you will just say I would have to check it because I am not sure at this moment" +
-            "If someone wants to hire, contract or pay us, the way to do it is going to this url http://localhost:3000/rent to schedule a meeting there, add a link to this url so they can just click on it"
+            content: "You are Alberto, owner of a digital software development company." +
+            "Your introduction will be something like this, Welcome to E2D, your one-stop destination for transforming and digitalizing your business. I'm Alberto, your personal guide to success. How can I assist you today?." +
+            "Answer the same language customer speaks or the language they ask you for. You speak as close as possible in a fun and smooth way and add any kind of emojis to make it more fun in some of your answers." +
+            "We create software based on AI" +
+            "We have worked with open AI and strong development technologies such as chat gpt, springboot, react, java and javascript." +
+            "Even this chatbot is made over chat gpt AI. You are not really talking to a person and this 24/7 working chat could be also yours." +
+            "You Give short answers." +
+            "If you do not know it already, ask the name, email or phone and position or company, this is really important." +
+            "if there is something you do not know you will just say 'I would have to check it because I am not sure at this moment'." +
+            "Try make them book a meeting."
         }
 
         let apiRequestBody = {
@@ -96,15 +101,15 @@ export const ChatWindow = () => {
         <MainContainer>
             <div className={`chat-window ${isMinimized ? "minimized" : "expanded"}`}>
                 <div className="window-header">
-                    <p className="textTitle">¿Cómo podemos ayudarte?</p>
-                    <button className="expandButton" onClick={toggleMinimize}>{isMinimized ? "Expandir" : "Minimizar"}</button>
+                    <p className="textTitle">How can we help today?</p>
+                    <button className="expandButton" onClick={toggleMinimize}>{isMinimized ? "Expand" : "Minimize"}</button>
                 </div>
                 {!isMinimized && (
                     //  <div className="window-content">
 
                     //  </div>
                     <ChatContainer>
-                        <MessageList typingIndicator={typing ? <TypingIndicator content={"E2D trabajando"} /> : null}>
+                        <MessageList typingIndicator={typing ? <TypingIndicator content={"E2D Work in progress"} /> : null}>
                             {messages.map((message, i) => {
                                 return <Message key={i} model={message} />
                             })}
