@@ -1,0 +1,68 @@
+/* CONTENT */
+
+.sectionContainer .sectionPart {
+    width: 100%;
+    display: block;
+    background-color: rgba(202, 202, 202, 0.7);
+    margin-bottom: 30px;
+    margin-left: 50px;
+    padding: 20px;
+    border-radius: 5px 15px 15px 5px;
+    padding-right: 40px;
+  }
+  
+  .sectionContainer .sectionPart h2 p,
+  .sectionContainer .sectionPart h2 {
+    display: block;
+    float: left;
+  }
+  
+  .sectionContainer .sectionPart h2 {
+    padding-right: 10px;
+  }
+  
+  .sectionContainer .sectionPart article h2 p {
+    font-weight: 500;
+    margin-right: 50px;
+    justify-content: center;
+    color: red;
+  }
+  
+.content {
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+  }
+  
+  .content .sectionPart {
+    text-align: justify;
+  }
+  
+  .content .sectionPart article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 16px;
+  }
+  
+  .content .sectionPart h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: large;
+    color: #DE1FA1;
+  }
+  .content .sectionPart h2.articleTitle {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+    margin: 0;
+  }
+  
+  .content .sectionPart p.articleText {
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  /* end CONTENT */

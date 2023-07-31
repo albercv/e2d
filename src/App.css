@@ -1,38 +1,119 @@
-.App {
+/* BODY AND CONTAINER */
+* {
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+}
+
+body {
+  background: rgba(255, 255, 255, 1) url('../public/images/webb.png') repeat fixed center;
+}
+
+.mainContainer {
+  width: 100%;
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* end BODY AND CONTAINER */
+
+/* SIDE VAR */
+aside {
+  float: left;
+  width: 10%;
+  box-shadow: 0px 0px 2px wheat inset;
+  background-color: #333333;
+  border-radius: 7px;
+  margin-left: 15%;
+  box-shadow: 1px 2px #DE1FA1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+aside>a {
+  margin-top: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+aside a {
+  display: block;
+  color: #00c2cb;
 }
 
-.App-link {
-  color: #61dafb;
+aside h1 {
+  color: #00c2cb;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #F5A22F;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+aside .asideBox>div {
+  color: #00c2cb;
 }
+
+aside .asideBox input[type="text"] {
+  width: 80%;
+}
+
+aside .asideBox input[type="button"] {
+  margin-top: 10px;
+  cursor: pointer;
+  color: #00c2cb;
+  padding: 0px 4px;
+  border-radius: 5px;
+  background-color: #d7cfcf;
+  transition: all 300ms;
+}
+
+aside .asideBox input[type="button"]:hover {
+  background-color: #F5A22F;
+  color: #DE1FA1;
+}
+
+aside .asideBox {
+  margin: 40px 0px;
+  z-index: 2;
+  padding: 8px;
+  border-bottom: 1px solid #d7cfcf;
+
+}
+
+/* end SIDE VAR */
+
+.clear {
+  clear: both;
+  float: none;
+}
+
+/* FOOTER */
+footer {
+  font-size: 20px;
+  background-color: #333333;
+  min-height: 100px;
+  width: 100%;
+  margin-top: 10px;
+  line-height: 100px;
+}
+
+footer a span {
+  color: #d7cfcf;
+}
+
+footer a {
+  text-decoration: none;
+  color: #00c2cb;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #DE1FA1;
+}
+
+footer a:visited {
+  /* not working */
+  color: #F5A22F;
+}
+
+/* end FOOTER */

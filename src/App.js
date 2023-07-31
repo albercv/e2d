@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { ChatWindow } from './component/ChatWindow';
+import { UserProvider } from './component/UserContext';
+import { MainPage } from './routing/MainPage';
+
 
 function App() {
+  const clearConsoleErrors = () => {
+    console.clear();
+    console.warn("LOG BORRADO:\n Para ver errores anteriores elimina clearConsoleErrors(); \n en App.js línea 10...");
+  };
+  clearConsoleErrors();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserProvider>
+        <MainPage />
+        <ChatWindow />
+      </UserProvider>
     </div>
   );
 }
